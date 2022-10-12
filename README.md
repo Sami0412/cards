@@ -40,3 +40,11 @@ go test -> run any tests associated with current project
 - fmt is a standard library package included with Golang
     - Used to print out info to the terminal, mainly for debugging
 - Import statement is like Using statements in C#
+
+# The Project
+- Create an application that simulates a deck of cards, with the following functionality:
+    - newdeck: create list of playing cards (array of strings)
+    - print: log out contents of deck of cards
+    - shuffle: shuffle all cards in deck
+    - deal: createa "hand" of cards
+    - newdeckFronFile: load a list of cards from local machine
