@@ -48,3 +48,15 @@ go test -> run any tests associated with current project
     - shuffle: shuffle all cards in deck
     - deal: createa "hand" of cards
     - newdeckFronFile: load a list of cards from local machine
+
+# Notes
+## Variable Declaration
+var card string = "test" == card := "test"
+- Go is statically typed but will infer type in some instances
+- := tells Go to create a new variable and infer the type from whatever is on the right
+- := can only be used when defining a new variable - not for reassigning
+- := can also only be using INSIDE a function - not for initialising global variables
+    - You can declare a global variable, and then initialise it inside a function
+- Global variables can be declared and initialised outside of a function like: var test = "testing"
+    - This is also valid inside a function
+- 
