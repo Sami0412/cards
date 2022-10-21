@@ -1,6 +1,18 @@
+# The Project
+- Create an application that simulates a deck of cards, with the following functionality:
+    - newdeck: create list of playing cards (array of strings)
+    - print: log out contents of deck of cards
+    - shuffle: shuffle all cards in deck
+    - deal: createa "hand" of cards
+    - newdeckFronFile: load a list of cards from local machine
+
+# Notes
+
 To run: go run <filename>
 
-# Go CLI
+Go is not an object oriented programming language - there is no concept of classes.
+
+## Go CLI
 go build -> compiles bunch of go source code files
 - Just compiles program without executing
 - e.g. go build main.go > creates main.exe file
@@ -19,7 +31,7 @@ go test -> run any tests associated with current project
 
 ---
 
-# Packages
+## Packages
 - Package == Project == Workspace
 - A package is a collection of common source code files
 - E.g. Package Main contains main.go, support.go, helper.go etc
@@ -41,15 +53,6 @@ go test -> run any tests associated with current project
     - Used to print out info to the terminal, mainly for debugging
 - Import statement is like Using statements in C#
 
-# The Project
-- Create an application that simulates a deck of cards, with the following functionality:
-    - newdeck: create list of playing cards (array of strings)
-    - print: log out contents of deck of cards
-    - shuffle: shuffle all cards in deck
-    - deal: createa "hand" of cards
-    - newdeckFronFile: load a list of cards from local machine
-
-# Notes
 ## Variable Declaration
 var card string = "test" == card := "test"
 - Go is statically typed but will infer type in some instances
@@ -70,4 +73,20 @@ var card string = "test" == card := "test"
 - Both must be defined with a single data type - can't have an array or slice with multiple data types inside
 - append: built0in function that adds elements to the end of a slice
     - Original slice is not changed - append returns a new slice
-- 
+
+## Custom Type Declarations
+- In an OO language, we would probably made a Deck class, and create instances of this class.
+- Instead of classes, in Go we can extend the functionality of existing base types
+- For this project we can create an extension of an slice of strings as our custom deck type
+    - type deck []string
+    - We can also attach customised functionality to this type by creating functions with a receiver - ie a method, a function that belongs to an instance
+- Declare the new type, then any associated functions need to have a receiver in their declaration
+- type deck []string
+    func (d deck) print() {...}
+    - (d deck) is the receiver
+    - print is the function name
+- This syntax means that every variable of type deck has access to this print method
+- The variable d references the instance of the deck variable that we are working with - so in this card d = cards array
+    - The receiver variable is similar to the keyword 'this' in other languages
+    - In Go, convention is to name the receiver variable with a 1 or 2 letter abbreviation that matches the type of the receiver
+
