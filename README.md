@@ -6,6 +6,15 @@
     - deal: createa "hand" of cards
     - newdeckFronFile: load a list of cards from local machine
 
+### newDeck
+- Create an empty deck
+- Create two separate slices, one for suits and one for the card values
+- Set up two for loops to iterate through each list and for each combination of suit and value, add a new card to the deck
+- Pseudo code:
+    for each suit in cardSuits
+        for each value in cardValues
+            Add new card to cards deck
+
 # Notes
 
 To run: go run <filename>
@@ -54,7 +63,7 @@ go test -> run any tests associated with current project
 - Import statement is like Using statements in C#
 
 ## Variable Declaration
-var card string = "test" == card := "test"
+var card string = "test"    ==      card := "test"
 - Go is statically typed but will infer type in some instances
 - := tells Go to create a new variable and infer the type from whatever is on the right
 - := can only be used when defining a new variable - not for reassigning
@@ -66,12 +75,19 @@ var card string = "test" == card := "test"
 ## Functions
 - Must declare a return type after the function name e.g. func newCard() *string* {}
 
+## For Loops
+- for i, card := range cards {
+    fmt.Println(i, card)
+}
+- Very similar to syntax of other languages
+- When we don't need to use the index variable (i in the case), replace it with an underscore
+
 ## Arrays & Slices
 - Go has 2 basic data structures for handling lists of records
     - Array: fixed length list, very basic
     - Slice: an array that can change length, flexible, more features
 - Both must be defined with a single data type - can't have an array or slice with multiple data types inside
-- append: built0in function that adds elements to the end of a slice
+- append: built-in function that adds elements to the end of a slice
     - Original slice is not changed - append returns a new slice
 
 ## Custom Type Declarations
