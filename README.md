@@ -59,4 +59,15 @@ var card string = "test" == card := "test"
     - You can declare a global variable, and then initialise it inside a function
 - Global variables can be declared and initialised outside of a function like: var test = "testing"
     - This is also valid inside a function
+
+## Functions
+- Must declare a return type after the function name e.g. func newCard() *string* {}
+
+## Arrays & Slices
+- Go has 2 basic data structures for handling lists of records
+    - Array: fixed length list, very basic
+    - Slice: an array that can change length, flexible, more features
+- Both must be defined with a single data type - can't have an array or slice with multiple data types inside
+- append: built0in function that adds elements to the end of a slice
+    - Original slice is not changed - append returns a new slice
 - 
