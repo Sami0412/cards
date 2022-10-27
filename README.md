@@ -4,7 +4,7 @@
     - print: log out contents of deck of cards
     - shuffle: shuffle all cards in deck
     - deal: createa "hand" of cards
-    - newdeckFronFile: load a list of cards from local machine
+    - newdeckFromFile: load a list of cards from local machine
 
 ### newDeck
 - Create an empty deck
@@ -14,6 +14,12 @@
     for each suit in cardSuits
         for each value in cardValues
             Add new card to cards deck
+
+### deal
+- Deal out a "hand" of cards, leaving the other cards in the original deck
+    - Essentially splitting the slice into 2 smaller slices
+- The "hand" of cards will still be of underlying type Deck
+
 
 # Notes
 
@@ -74,6 +80,9 @@ var card string = "test"    ==      card := "test"
 
 ## Functions
 - Must declare a return type after the function name e.g. func newCard() *string* {}
+- Can return multiple return values e.g. return a, b
+    - Annotate the return types in the function signature e.g. func blah() (*int, string*)
+- 
 
 ## For Loops
 - for i, card := range cards {
@@ -89,6 +98,12 @@ var card string = "test"    ==      card := "test"
 - Both must be defined with a single data type - can't have an array or slice with multiple data types inside
 - append: built-in function that adds elements to the end of a slice
     - Original slice is not changed - append returns a new slice
+- Slices are zero indexed
+- Familiar syntax to access memebers of slice - e.g. cards[1]
+- Built-in helper method to allow selection of sub-slices
+    - cards[startIndexIncluding:upToNotIncluding] - e.g. cards[0:2]
+    - Can leave numbers off either side of colon - Go will infer that you want to start from the beginning/continue to end of slice - e.g. cards[:2], cards [2:]
+
 
 ## Custom Type Declarations
 - In an OO language, we would probably made a Deck class, and create instances of this class.

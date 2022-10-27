@@ -28,3 +28,8 @@ func (d deck) print() {
 		fmt.Println(i, card)
 	}
 }
+
+//(deck, deck) is the return type - we expect two values of type deck
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
