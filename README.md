@@ -20,6 +20,17 @@
     - Essentially splitting the slice into 2 smaller slices
 - The "hand" of cards will still be of underlying type Deck
 
+### saveToFile
+- Save a deck to the hard drive on our current machine
+- We will then be able to call newDeckFromFile() to retrieve a deck from the hard drive
+- Go has packages to work with underlying hardware - see packages section on Go website
+    - ioutil package implements common operations for working with the underlyimg hard drive
+        - We want to use this method from the package:
+        WriteFile(filename string, data []byte, perm os.FileMode) error
+            - data: raw data that we want to save to file - must be a byte slice (See Type Conversion below)
+            - perm: permissions used to create file
+- Take our deck and convert to a simple slice of strings, turn it into one big string, then convert to byte slice
+    - Can use another helper package called Strings to manipulate the string array
 
 # Notes
 
@@ -121,3 +132,6 @@ var card string = "test"    ==      card := "test"
     - The receiver variable is similar to the keyword 'this' in other languages
     - In Go, convention is to name the receiver variable with a 1 or 2 letter abbreviation that matches the type of the receiver
 
+## Type Conversion
+- typeWeWant(whatWeHave)
+    - e.g. []byte("Hello")
